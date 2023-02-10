@@ -1,0 +1,218 @@
+body{
+    background: rgba(0, 0, 0,0.9);
+    margin: 0;
+    color: #fff;
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.showcase::after{
+    content:'';
+    height: 100vh;
+    width: 100%;
+    background-image: url('img/bclandinghero_bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display:block;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    transition: all 1000ms;
+}
+
+.showcase:hover::after {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+
+}
+.showcase:hover .content {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+.content {
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+    left: 50%;
+    margin-top: 105px;
+    margin-left: -145px;
+    width: 300px;
+    height: 350px;
+    text-align: center;
+    transition: all 1000ms;
+
+}
+
+.content .logo{
+height: 250px;
+width: 300px;
+top: 0;
+}
+
+.content .title{
+    font-size: 2.2rem;
+    margin-top:1rem;
+
+}
+
+
+.content .text {
+    line-height: 1.7;
+    margin-top: 1rem;
+
+}
+
+.container {
+    max-width:960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 4rem 1rem;
+}
+
+
+.grid-3{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.btnContact {
+    background: white;
+    border: none;
+    border-radius: 50%;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 3px 1px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+
+}
+.btnContact:hover {
+    background-color: #b9a6ad;
+    color: white;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    padding: 10px;
+    width: 280px;
+    left: 50%;
+    margin-left: -150px;
+    height: 180px;
+    top: 50%;
+    margin-top: -100px;
+    background: purple;
+    border: 3px solid #F04A49;
+    z-index: 20;
+  }
+  
+  #popup:after {
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: -2;
+  }
+  
+  #popup:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #333;
+    color: white;
+    z-index: -1;
+  }
+  
+  #popup .close {
+    color: white;
+  }
+.grid-2{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+}
+.center{
+    text-align: center;
+    margin: auto;
+}
+
+.bg-light {
+    background: #f4f4f4;
+    color: #333;
+}
+
+.bg-dark {
+    background: #333;
+    color:#f4f4f4;
+}
+
+footer {
+    padding: 2.2rem;
+}
+
+footer p {
+    margin: 0;
+
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  footer li {
+    display: inline;
+    align-items: center;
+    margin-bottom: 10px;
+    font-family: arial;
+  }
+ 
+
+
+/* Small Screens */
+@media(max-width: 560px){
+    .showcase::after {
+        height: 50vh;
+    }
+.content {
+    top:5%;
+    margin-top: 5px;
+}
+.content .logo {
+    height: 140px;
+    width: 140px;
+}
+.content .text {
+    display: none;
+}
+.grid-3, .grid-2 {
+    grid-template-columns: 1fr; 
+}
+.services div {
+    border-bottom: #333 dashed 1px;
+    padding: 1.2rem 1rem;
+}
+}
+
+/*Landscape*/
+
+@media(max-height: 500px){
+    .content .title, .content .text {
+        display:none;
+    }
+    .content {
+        top: 0;
+    }
+}
+
